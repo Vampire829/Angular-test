@@ -1,0 +1,7 @@
+<div class="py-4 px-6 touded flex items-center flex-row mb-2">
+    <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2">
+  <h2>
+    {{product.title}}
+  </h2>
+  <p><span class="font-bold"> Price: {{product.price | currency: 'RUB'}}</span></p>
+</div>

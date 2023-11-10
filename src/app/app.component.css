@@ -1,0 +1,8 @@
+.title{
+    text-align: center;
+}
+.header__title{
+    max-width: 30%;
+    margin: 0 auto;
+    padding-top: 5px;
+}
