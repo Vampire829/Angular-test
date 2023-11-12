@@ -10,4 +10,5 @@ import { TypeProduct } from 'src/app/modules/product'
 export class ProductComponent{
   @Input()
   product!: TypeProduct
+  details: boolean = false
 }

@@ -1,7 +1,12 @@
+<app-global-error></app-global-error>
 <div class="header__title">
     <h1 class="title">{{title | uppercase}}</h1>
-    <app-product
-    [product]="products[0]"
-    ></app-product>
-    
+    <input class="mb-2 border py-2 px-4 w-full"
+     type="text"
+     placeholder="fulter products..."
+     [(ngModel)]="term"
+    >
+   
+    <p *ngIf="loading" class="text-center text-lg">Loading...</p>
+    <app-product *ngFor="let product of products" [product]="product"></app-product>
 </div>

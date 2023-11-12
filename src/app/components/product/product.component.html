@@ -1,7 +1,19 @@
-<div class="py-4 px-6 touded flex items-center flex-row mb-2">
-    <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2">
+<div class="py-4 px-6 touded flex items-center flex-row mb-2 border 2px solid">
+    <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2 cursor pointer">
   <h2>
     {{product.title}}
   </h2>
   <p><span class="font-bold"> Price: {{product.price | currency: 'RUB'}}</span></p>
+  <button class="border py-2 px-2 rounded" 
+    [ngClass]="{
+        'bg-yellow-50': !details,
+        'bg-blue-500': details
+    }"
+  (click)="details=!details
+
+  ">{{details? 'Hide': 'Show'}} Details</button>
+  <div *ngIf="details">
+    <p class="flex-wrap">{{product.description}}</p>
+  <p>RAte:<span [ngStyle]="{fontWeight: 'bold'}">{{product.rating.rate |number: '1.2-4'}}</span></p>
+  </div>
 </div>
